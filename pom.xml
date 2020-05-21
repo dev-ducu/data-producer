@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>poc</groupId>
+    <groupId>asultandev</groupId>
     <artifactId>data-producer</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
@@ -19,7 +19,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>2.2.7.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -31,27 +31,26 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Starter for using Spring Security -->
+        <!-- Support for Spring Security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- Automated JSON API documentation for API's built with Spring -->
+        <!-- Support for Kafka -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
-        <!-- Generate beautiful documentation from a Swagger-compliant API. -->
+        <!-- UI for REST API  -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
 
-        <!-- Lombok -->
+        <!-- Lombok - no boilerplate code -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -74,7 +73,7 @@
                 <version>2.0.0</version>
                 <configuration>
                     <to>
-                        <image>poc/${project.artifactId}:${project.version}</image>
+                        <image>${project.groupId}/${project.artifactId}:${project.version}</image>
                     </to>
                 </configuration>
             </plugin>
