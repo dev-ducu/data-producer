@@ -36,7 +36,8 @@ public class DataPointController {
         log.info("Handling POST request on path => {}", PATH_DATA_POINTS);
         log.info("Request body => {}", dataPointRequestDTO);
 
-        final DataPointResponseDTO userResponseDto = dataPointService.create(dataPointRequestDTO);
+        final DataPointResponseDTO userResponseDto = dataPointService.handleCreate(dataPointRequestDTO);
+
         log.info("Response => {}", userResponseDto);
         return userResponseDto;
     }

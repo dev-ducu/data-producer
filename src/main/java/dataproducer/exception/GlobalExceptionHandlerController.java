@@ -5,9 +5,6 @@ import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.DisabledException;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
@@ -33,26 +30,6 @@ public class GlobalExceptionHandlerController {
         };
     }
 
-
-    /***********************
-     * AUTHENTICATION ERRORS
-     ***********************/
-    @ExceptionHandler(AuthenticationException.class)
-    public void handleAuthenticationException(HttpServletResponse res, AuthenticationException ex) throws IOException {
-        log.error("Invalid credentials", ex);
-        res.sendError(HttpStatus.UNAUTHORIZED.value(), "Invalid credentials");
-    }
-
-    /**********************
-     * AUTHORIZATION ERRORS
-     **********************/
-    @ExceptionHandler(AccessDeniedException.class)
-    public void handleAccessDeniedException(HttpServletResponse res, AccessDeniedException ex) throws IOException {
-        log.error("Access denied: ", ex);
-        res.sendError(HttpStatus.FORBIDDEN.value(), "Access denied");
-    }
-
-
     /****************************
      * CUSTOM & UNEXPECTED ERRORS
      ***************************/
@@ -67,5 +44,4 @@ public class GlobalExceptionHandlerController {
         log.error("Something went wrong: ", ex);
         res.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Something went wrong");
     }
-
 }
