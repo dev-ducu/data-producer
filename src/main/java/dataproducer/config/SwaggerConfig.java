@@ -38,7 +38,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Data Producer Service API")
                 .description("This is the Data Producer Service REST API. " +
-                        "The service context is <b>/data-points</b>, so make sure  that all REST requests URLs start with that.")
+                        "The service context is <b>/data-producer</b>, so make sure  that all REST requests URLs start with that.")
                 .version("1.0.0")
                 .build();
     }
